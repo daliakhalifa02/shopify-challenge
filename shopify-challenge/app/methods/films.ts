@@ -10,3 +10,14 @@ export async function searchFilms(movieTitle: string) {
     })
     return response.data
 }
+
+export async function getFilmDetails(imdbID: string) {
+    const response = await api.get<any>('', {
+        params: {
+            i: imdbID,
+            type: 'movie'
+        }
+    })
+    return response.data
+}
+
