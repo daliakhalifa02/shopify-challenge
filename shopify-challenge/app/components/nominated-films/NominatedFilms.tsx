@@ -15,7 +15,7 @@ export default function NominatedFilms({ nominatedFilmIds, setNominatedFilmIds }
     })
     return (
         <div>
-            <p>Nominated Films</p>
+            <p>Nominated Films <span>{nominatedFilmIds.length} / 5</span></p>
             <ul>
                 {nominatedFilms.length === 0 && <div>No nominated films</div>}
                 {nominatedFilms.map((film) => (
