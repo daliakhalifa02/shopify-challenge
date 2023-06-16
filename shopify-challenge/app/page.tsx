@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-      <section>
+      <section className={styles.section}>
         <FilmSearch nominatedFilmIds={nominatedFilmIds} setNominatedFilmIds={setNominatedFilmIds} />
       </section>
 
-      <section>
+      <section className={styles.section}>
         <NominatedFilms nominatedFilmIds={nominatedFilmIds} setNominatedFilmIds={setNominatedFilmIds} />
       </section>
 

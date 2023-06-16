@@ -1,12 +1,13 @@
 import React from 'react'
-import stlyes from './style/css/search-bar.module.css'
+import styles from './style/css/search-bar.module.css'
 export default function SearchBar({ searchQuery, setSearchQuery }: {
     searchQuery: string,
     setSearchQuery: React.Dispatch<React.SetStateAction<string>>
 }) {
     return (
-        <form action="">
+        <form action="" className={styles["search-form"]}>
             <input
+            className={styles["search-form__input"]}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 type="text"

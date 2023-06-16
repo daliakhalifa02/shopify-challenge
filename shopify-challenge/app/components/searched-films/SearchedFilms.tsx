@@ -32,29 +32,32 @@ export default function SearchedFilms({ searchQuery, setNominatedFilmIds, nomina
     return (
         <div>
             <p>Movie Results for {searchQuery}</p>
-            <ul>
+            <ul className={styles["searched-films-list"]}>
                 {data?.Search?.filter((film) => film.Poster !== "N/A").sort((film1, film2) => parseInt(film2.Year) - parseInt(film1.Year))
-                .map((film: MovieSearch) => (
-                    <li key={film.imdbID}>
-                        <div className={styles["searched-film"]}>
-                            <img className={styles["searched-film__poster"]} src={film.Poster} alt="" />
-                            <div className='searched-film__info'>
-                                <h2 className='searched-film__title'>
-                                    {film.Title}
-                                </h2>
-                                <p className='searched-film__year-type'>
-                                    {film.Year} - {film.Type}
-                                </p>
-                                <button disabled={
-                                    nominatedFilmIds.length >= 5 ||
-                                    nominatedFilmIds.includes(film.imdbID)
-                                } onClick={() => handleNominate(film.imdbID)} className='searched-film__nominate-btn'>
-                                    Nominate
-                                </button>
+                    .map((film: MovieSearch) => (
+                        <li className={styles["searched-films-list-item"]} key={film.imdbID}>
+                            <div className={styles["searched-film"]}>
+                                <img className={styles["searched-film__poster"]} src={film.Poster} alt="" />
+                                <div className={styles["searched-film__body"]}>
+                                    <div className={styles["searched-film__content"]}>
+                                        <h2 className={styles["searched-film__title"]}>
+                                            {film.Title}
+                                        </h2>
+                                        <p className='searched-film__year-type'>
+                                            {film.Year} - {film.Type}
+                                        </p>
+                                    </div>
+                                    <button disabled={
+                                        nominatedFilmIds.length >= 5 ||
+                                        nominatedFilmIds.includes(film.imdbID)
+                                    } onClick={() => handleNominate(film.imdbID)} className={styles["searched-film__nominate-btn"]}>
+                                        Nominate
+                                    </button>
+                                </div>
+
                             </div>
-                        </div>
-                    </li>
-                ))}
+                        </li>
+                    ))}
             </ul>
         </div>
     )
