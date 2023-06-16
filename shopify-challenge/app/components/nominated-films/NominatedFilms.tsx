@@ -32,6 +32,9 @@ export default function NominatedFilms({ nominatedFilmIds, setNominatedFilmIds }
                     </>
                 ))}
             </ul>
+            <button disabled={nominatedFilms.length < 5} onClick={() => {}}>
+                Submit Nominations
+            </button>
         </div>
     )
 }

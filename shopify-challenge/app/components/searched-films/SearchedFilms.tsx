@@ -33,7 +33,8 @@ export default function SearchedFilms({ searchQuery, setNominatedFilmIds, nomina
         <div>
             <p>Movie Results for {searchQuery}</p>
             <ul>
-                {data?.Search?.filter((film) => film.Poster !== "N/A").map((film: MovieSearch) => (
+                {data?.Search?.filter((film) => film.Poster !== "N/A").sort((film1, film2) => parseInt(film2.Year) - parseInt(film1.Year))
+                .map((film: MovieSearch) => (
                     <li key={film.imdbID}>
                         <div className={styles["searched-film"]}>
                             <img className={styles["searched-film__poster"]} src={film.Poster} alt="" />
