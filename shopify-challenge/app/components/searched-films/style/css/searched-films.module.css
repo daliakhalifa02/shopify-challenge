@@ -1,11 +1,13 @@
 .searched-films-list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
+  height: 100vh;
+  overflow-y: scroll;
 }
 .searched-films-list-item {
   width: 100%;
@@ -38,6 +40,8 @@
   text-align: center;
 }
 .searched-film__nominate-btn {
+  width: 50%;
+  margin: 0 auto;
   position: relative;
   cursor: pointer;
   border-radius: var(--border-radius);

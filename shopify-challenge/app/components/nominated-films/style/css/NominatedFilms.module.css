@@ -1,0 +1,36 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.list img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .list img {
+    width: 500px;
+    max-height: 500px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .film-title {
+    text-align: center;
+  }
+  .list-item {
+    width: 45%;
+  }
+}/*# sourceMappingURL=NominatedFilms.module.css.map */
