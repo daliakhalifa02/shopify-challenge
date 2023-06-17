@@ -1,4 +1,18 @@
 .main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main .section {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
+  .main .section {
+    flex-basis: 50%;
+  }
 }/*# sourceMappingURL=style.module.css.map */
