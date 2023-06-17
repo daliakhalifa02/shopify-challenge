@@ -15,7 +15,7 @@ export default function SearchedFilms({ searchQuery, setNominatedFilmIds, nomina
         setNominatedFilmIds([...nominatedFilmIds, imdbID])
     }
 
-    if (searchQuery.length < 2) return (<div>Search for a movie, tv show, person...</div>)
+    if (searchQuery.length < 2) return (<div>Search for a movie</div>)
 
     const { data, isLoading, error } = useQuery({
         queryKey: ['filmQuery', searchQuery],
