@@ -1,7 +1,7 @@
 import { getFilmDetails } from '@/app/methods/films'
 import { useQueries } from '@tanstack/react-query'
 import React from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Button, Progress } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Button, Progress, Spinner } from '@chakra-ui/react'
 import styles from './style/css/NominatedFilms.module.css'
 import { Image } from '@chakra-ui/react'
 export default function NominatedFilms({ nominatedFilmIds, setNominatedFilmIds }: {
@@ -10,7 +10,7 @@ export default function NominatedFilms({ nominatedFilmIds, setNominatedFilmIds }
 }) {
     const nominatedFilms = useQueries({
         queries: nominatedFilmIds.map((id) => ({
-            queryKey: ['filmDetails', id],
+            queryKey: ['showDetails', id],
             queryFn: () => getFilmDetails(id),
             staleTime: 1000 * 60 * 60 * 24 * 7 // 1 week
         }))
@@ -24,7 +24,7 @@ export default function NominatedFilms({ nominatedFilmIds, setNominatedFilmIds }
                 {nominatedFilms.length === 0 && <div>No nominated films</div>}
                 {nominatedFilms.map((film) => (
                     <>
-                        {film.isLoading && <div>Loading</div>}
+                        {film.isLoading && <Spinner style={{ marginInline: "auto" }} />}
                         <li key={film.data?.imdbID} className={styles["list-item"]}>
                             <Card>
                                 <CardHeader>{film.data?.Title}</CardHeader>

@@ -10,10 +10,11 @@ export default function FilmSearch({ nominatedFilmIds, setNominatedFilmIds }:
         setNominatedFilmIds: React.Dispatch<React.SetStateAction<Array<string>>>
     }) {
     const [searchQuery, setSearchQuery] = useState('')
+    const [queryType, setQueryType] = useState<'movie' | 'series' | 'episode'>('movie')
     return (
         <div className={styles.container}>
-            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-            <SearchedFilms nominatedFilmIds={nominatedFilmIds} setNominatedFilmIds={setNominatedFilmIds} searchQuery={searchQuery} />
+            <SearchBar queryType={queryType} setQueryType={setQueryType} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+            <SearchedFilms showType={queryType} nominatedFilmIds={nominatedFilmIds} setNominatedFilmIds={setNominatedFilmIds} searchQuery={searchQuery} />
         </div>
     )
 }
