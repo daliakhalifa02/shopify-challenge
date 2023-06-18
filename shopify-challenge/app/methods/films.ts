@@ -1,21 +1,21 @@
 import api from "./api"
 
-export async function searchFilms(movieTitle: string) {
-
-    const response = await api.get<MovieSearchResponse>('', {
-        params: {
-            s: movieTitle,
-            type: 'movie'
-        }
-    })
-    return response.data
+export async function searchShow(movieTitle: string, type: "movie" | "series" | "episode") {
+    if (movieTitle) {
+        const response = await api.get<MovieSearchResponse>('', {
+            params: {
+                s: movieTitle,
+                type
+            }
+        })
+        return response.data
+    }
 }
 
 export async function getFilmDetails(imdbID: string) {
     const response = await api.get<any>('', {
         params: {
-            i: imdbID,
-            type: 'movie'
+            i: imdbID
         }
     })
     return response.data

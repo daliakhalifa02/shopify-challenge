@@ -1,11 +1,9 @@
-@mixin button-bg-slide(
-  $left,
+@mixin button-bg-slide($left,
   $width,
   $height,
   $radius,
   $transform-origin,
-  $bg-color
-) {
+  $bg-color) {
   transition: all 1s cubic-bezier(0.68, 0.55, 0.265, 1);
   background-color: $bg-color;
   border-radius: $radius;
@@ -24,11 +22,12 @@
 .searched-films-list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
+
   &-item {
     width: 100%;
     display: flex;
@@ -39,6 +38,7 @@
 .searched-film {
   width: min(100%, 800px);
   display: flex;
+
   &__poster {
     width: 100px;
     height: 150px;
@@ -50,16 +50,21 @@
       object-fit: cover;
     }
   }
+
   &__body {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   &__content {
     margin-bottom: auto;
     text-align: center;
   }
+
   &__nominate-btn {
+    width: 50%;
+    margin: 0 auto;
     position: relative;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -70,6 +75,13 @@
     font-weight: 600;
     padding: 0.3em 1em;
     color: pink;
+    transition: all 0.2s ease-in-out;
+
+    &:disabled {
+      background-color: pink;
+      color: white;
+    }
+
     &:hover,
     &:focus {
       &::before {
@@ -77,22 +89,22 @@
         transform: scaleX(1);
       }
     }
+
     &:active {
-      transform: none;
+
       &::before {
         transition: transform 0.1s ease-in-out;
         transform: scaleX(0);
       }
     }
+
     &::before {
-      @include button-bg-slide(
-        0,
+      @include button-bg-slide(0,
         calc(100%),
         100%,
         var(--border-radius),
         left,
-        purple
-      );
+        purple);
     }
   }
 }

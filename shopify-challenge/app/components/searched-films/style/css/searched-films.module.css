@@ -1,7 +1,7 @@
 .searched-films-list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -38,6 +38,8 @@
   text-align: center;
 }
 .searched-film__nominate-btn {
+  width: 50%;
+  margin: 0 auto;
   position: relative;
   cursor: pointer;
   border-radius: var(--border-radius);
@@ -48,13 +50,15 @@
   font-weight: 600;
   padding: 0.3em 1em;
   color: pink;
+  transition: all 0.2s ease-in-out;
+}
+.searched-film__nominate-btn:disabled {
+  background-color: pink;
+  color: white;
 }
 .searched-film__nominate-btn:hover::before, .searched-film__nominate-btn:focus::before {
   opacity: 1;
   transform: scaleX(1);
-}
-.searched-film__nominate-btn:active {
-  transform: none;
 }
 .searched-film__nominate-btn:active::before {
   transition: transform 0.1s ease-in-out;

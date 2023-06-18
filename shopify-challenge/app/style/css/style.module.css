@@ -12,7 +12,7 @@
   .main {
     flex-direction: row;
   }
-  .main .section {
+  .main .film-search {
     flex-basis: 50%;
   }
 }/*# sourceMappingURL=style.module.css.map */
