@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-      <section className={styles.section + styles["film-search"]}>
+      <section className={styles["film-search"]}>
         <FilmSearch nominatedFilmIds={nominatedFilmIds} setNominatedFilmIds={setNominatedFilmIds} />
       </section>
 

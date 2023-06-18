@@ -14,15 +14,12 @@ export default function SearchedFilms({ searchQuery, setNominatedFilmIds, nomina
         if (nominatedFilmIds.includes(imdbID)) return
         setNominatedFilmIds([...nominatedFilmIds, imdbID])
     }
-
-    if (searchQuery.length < 2) return (<div>Search for a movie</div>)
-
     const { data, isLoading, error } = useQuery({
         queryKey: ['filmQuery', searchQuery],
         queryFn: () => searchFilms(searchQuery),
         staleTime: 1000 * 60 * 60 * 24 * 7 // 1 week
     })
-
+    if (searchQuery === "") return (<div></div>)
     if (isLoading) return <div>Loading...</div>
 
     if (error) return <div>Something went wrong...</div>
