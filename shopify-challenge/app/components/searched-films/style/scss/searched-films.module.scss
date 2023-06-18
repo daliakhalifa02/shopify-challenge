@@ -75,6 +75,12 @@
     font-weight: 600;
     padding: 0.3em 1em;
     color: pink;
+    transition: all 0.2s ease-in-out;
+
+    &:disabled {
+      background-color: pink;
+      color: white;
+    }
 
     &:hover,
     &:focus {
@@ -85,7 +91,6 @@
     }
 
     &:active {
-      transform: none;
 
       &::before {
         transition: transform 0.1s ease-in-out;
