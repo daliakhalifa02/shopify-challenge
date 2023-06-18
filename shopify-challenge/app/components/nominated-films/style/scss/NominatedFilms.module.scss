@@ -21,9 +21,12 @@
 
 @media screen and (min-width: 768px) {
     .list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+        & div {
+            align-items: center;
+        }
     }
 
     .film-title {
@@ -31,8 +34,8 @@
 
     }
 
-    .list-item {
-        width: 45%;
-        // max-height: 500px;
-    }
+    // .list-item {
+    //     width: 45%;
+    //     // max-height: 500px;
+    // }
 }
