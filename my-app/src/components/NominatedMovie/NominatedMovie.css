@@ -1,0 +1,41 @@
+.nominated-movie-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+}
+  
+.nominated-movie {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+  
+.poster {
+    height: 190px;
+    border-radius: 10px;
+}
+
+.info>h2{
+    font-size: 20px;
+}
+
+.nominated-movie>.info, .movie-index{
+    color: #c1f0d0;
+}
+
+.info>.genres{
+    font-style: italic;
+}
+
+.remove-btn{
+    background-color: #008060;
+    border-radius: 50%;
+    border: none;
+    padding:5px 12px 8px 12px;
+    color: #c1f0d0;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

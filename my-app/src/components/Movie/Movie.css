@@ -1,0 +1,42 @@
+.movie-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 40px;
+    height: 80px;
+    border-bottom: 1px solid rgba(161, 161, 161, 0.347);
+}
+  
+.info {
+    color: #42474c;
+    text-transform: capitalize;
+    margin-top: 2px;
+    font-style: normal;
+    font-weight: 400;
+}
+  
+.title {
+    color: #004c3f;
+    margin: 0;
+    font-weight: bold;
+}
+
+.nominate-btn, .reveal-btn{
+    background-color: #008060;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+.nominate-btn:hover{
+    background-color: #004c3f;
+}
+
+.nominate-btn:disabled {
+    cursor: not-allowed;
+    background-color:gray;
+}

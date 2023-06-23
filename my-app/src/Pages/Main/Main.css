@@ -1,0 +1,82 @@
+.main {
+    display: flex;
+}
+  
+.left {
+    flex: 1;
+    height: 100vh;
+    padding: 30px;
+    background-color: #fbf7ed;
+    overflow-y: auto;
+}
+  
+.movies-list {
+    margin-top: 40px;
+}
+  
+  
+.right {
+    color: white;
+    overflow-y: auto;
+    flex: 1;
+    padding: 30px;
+    height: 100vh;
+    background-color: #004c3f;
+}
+  
+.nom{
+    color: #906509 ;
+}
+  
+.cinema{
+    color: #004c3f;
+}
+  
+h2{
+    font-size: 50px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+  
+.shoppies{
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 60px;
+}
+  
+.search-text{
+    font-size: 28px;
+    font-weight: 200;
+    color: #42474c;
+}
+  
+input{
+    padding: 15px 60px 15px 15px;
+    font-size: 20px;
+    border: 2px rgba(165, 165, 165, 0.485) solid;
+    border-radius: 3px;
+}
+  
+.nominated-counter{
+    color: #bdedcd;
+    font-weight: 100;
+    float: right;
+    font-size: 20px;
+}
+
+.winner-container{
+    background-color: #ede8db;
+    margin-top: 30px;
+    padding: 40px 20px;
+    text-align: center;
+    width: 50%;
+}
+
+.winner-container>h1{
+    color: #004c3f;
+    font-weight: 400;
+}
+
+.winner-container>p{
+    color: #515559;
+}
